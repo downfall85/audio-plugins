@@ -1,0 +1,14 @@
+[package]
+name = "pitch_shifter"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+nih_plug = { git = "https://github.com/robbert-vdh/nih-plug.git", features = ["assert_process_allocs"] }
+nih_plug_iced = { git = "https://github.com/robbert-vdh/nih-plug.git" }
+atomic_float = "0.1"
+realfft = "3"
+rustfft = "6"
