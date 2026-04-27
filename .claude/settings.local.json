@@ -9,7 +9,9 @@
       "Bash(gh repo:*)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:aidadsp.cc)",
-      "WebFetch(domain:aidadsp.github.io)"
+      "WebFetch(domain:aidadsp.github.io)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:mod.audio)"
     ]
   }
 }

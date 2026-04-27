@@ -10,6 +10,22 @@ Guitar → [1] Tuner → [2] Noise Gate → [3] Overdrive (boost)
 
 ---
 
+## AIDA-X Parameter Reference
+
+| Parameter | What it does |
+|---|---|
+| **Input** | Pre-gain before the neural amp model. Drives the model harder → more saturation and feel. This is the main "amp gain" control. |
+| **Pre/Post** | Toggles whether the Bass/Mid/Treble EQ runs **before** the amp model (shapes what goes in) or **after** (shapes the final tone). Use **Post** for most metal. |
+| **Bandpass/Peak** | Selects the Mid EQ curve type. **Peak** = broad bell (natural), **Bandpass** = narrow focus. Use **Peak** for scooping or boosting mids. |
+| **Bass** | Low-shelf EQ. Cuts or boosts low frequencies (~250 Hz and below). |
+| **Mid** | Parametric EQ in the midrange (~500 Hz–5 kHz). Shape depends on the Bandpass/Peak toggle. |
+| **Treble** | High-shelf EQ. Cuts or boosts high frequencies (~3–5 kHz and above). |
+| **Depth** | Peaking EQ that adds weight and resonance in the sub-bass region. Think of it as a low-end "body" control below the Bass shelf. |
+| **Presence** | Peaking EQ that adds upper-mid bite and articulation (~2–5 kHz). Mimics the presence control on a real amp head. |
+| **Output** | Final level trim after all processing. Use to match perceived loudness between bypassed and active states. |
+
+---
+
 ## Iron Maiden (NWOBHM / Classic Metal)
 
 Target: Marshall JCM800-style crunch, defined midrange, slightly loose feel.
@@ -23,9 +39,13 @@ Recommended AIDA-X model: **Marshall JCM800 or JTM45**
 | | Tone | 2.5 kHz |
 | | Output | -3 dB |
 | | Mix | 100% |
-| **AIDA-X** | Amp gain | ~50–60% |
+| **AIDA-X** | Input | 50–60% |
+| | Pre/Post | Post |
+| | Bandpass/Peak | Peak |
 | | Bass / Mid / Treble | 6 / 7 / 7 |
+| | Depth | 5 (neutral) |
 | | Presence | 60% |
+| | Output | 0 dB |
 | **Presence EQ** | HP Freq | 80 Hz |
 | | Mid Freq / Gain | 1.2 kHz / +3 dB |
 | | LP Freq | 6.5 kHz |
@@ -51,11 +71,15 @@ Recommended AIDA-X model: **Mesa Boogie Rectifier, 5150, or Diezel**
 | | Tone | 1.8 kHz |
 | | Output | -2 dB |
 | | Mix | 100% |
-| **AIDA-X** | Amp gain | 70–80% |
+| **AIDA-X** | Input | 70–80% |
+| | Pre/Post | Post |
+| | Bandpass/Peak | Peak |
 | | Bass | 5 |
 | | Mid | 4–5 (slight scoop) |
 | | Treble | 7 |
+| | Depth | 4 (reduce mud) |
 | | Presence | 65% |
+| | Output | 0 dB |
 | **Presence EQ** | HP Freq | 100 Hz |
 | | Mid Freq / Gain | 900 Hz / -2 dB |
 | | LP Freq | 7 kHz |
@@ -81,15 +105,18 @@ Recommended AIDA-X model: **5150 / Diezel Herbert / Engl Savage**
 | | Tone | 1.5 kHz |
 | | Output | 0 dB |
 | | Mix | 100% |
-| **AIDA-X** | Amp gain | 60–70% |
+| **AIDA-X** | Input | 60–70% |
+| | Pre/Post | Post |
+| | Bandpass/Peak | Peak |
 | | Bass | 3–4 |
 | | Mid | 5 |
 | | Treble | 7–8 |
+| | Depth | 3 (tight, no sub bloom) |
 | | Presence | 70% |
+| | Output | -1 dB |
 | **Presence EQ** | HP Freq | 110 Hz |
 | | Mid Freq / Gain | 3 kHz / +2 dB |
 | | LP Freq | 7 kHz |
-| | Output | -1 dB |
 | **Noise Gate** (post) | Threshold | -55 dB |
 | | Attack | 1 ms |
 | | Release | 40 ms |
@@ -98,13 +125,13 @@ Recommended AIDA-X model: **5150 / Diezel Herbert / Engl Savage**
 
 ---
 
-## Key Tip: Overdrive vs Amp Gain Balance
+## Key Tip: Overdrive vs AIDA-X Input Balance
 
-The **Overdrive drive level relative to AIDA-X amp gain** is the main tone knob:
+The **Overdrive drive level relative to AIDA-X Input** is the main tone knob:
 
-- Overdrive high + Amp gain moderate = **tight, modern, controlled** (extreme metal)
-- Overdrive low + Amp gain high = **loose, saturated, rock** (classic metal)
-- Overdrive medium + Amp gain medium = **balanced** (Metallica territory)
+- Overdrive high + Input moderate = **tight, modern, controlled** (extreme metal)
+- Overdrive low + Input high = **loose, saturated, rock** (classic metal)
+- Overdrive medium + Input medium = **balanced** (Metallica territory)
 
 ## AIDA-X Model Sources
 
