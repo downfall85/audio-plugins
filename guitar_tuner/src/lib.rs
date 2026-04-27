@@ -61,7 +61,7 @@ impl PitchDetector {
 
         let sr = self.sample_rate;
         let min_lag = (sr / 1200.0).max(1.0) as usize;
-        let max_lag = ((sr / 70.0) as usize).min(ANALYSIS_LEN / 2 - 1);
+        let max_lag = ((sr / 25.0) as usize).min(ANALYSIS_LEN / 2 - 1);
 
         if min_lag + 1 >= max_lag {
             return None;

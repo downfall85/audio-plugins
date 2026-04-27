@@ -6,7 +6,10 @@
       "Bash(cargo test:*)",
       "Bash(cargo build:*)",
       "Bash(cargo xtask:*)",
-      "Bash(gh repo:*)"
+      "Bash(gh repo:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:aidadsp.cc)",
+      "WebFetch(domain:aidadsp.github.io)"
     ]
   }
 }
