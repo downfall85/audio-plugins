@@ -71,7 +71,7 @@ impl BiquadCoeffs {
 // Pure DSP — extracted for unit testing
 // ---------------------------------------------------------------------------
 
-pub struct OverdriveDsp {
+pub(crate) struct OverdriveDsp {
     /// Fixed high-pass at 100 Hz: removes sub-bass before clipping to avoid
     /// low-frequency intermodulation and mud.
     pre_hp: BiquadState,
@@ -80,14 +80,14 @@ pub struct OverdriveDsp {
 }
 
 impl OverdriveDsp {
-    pub fn new() -> Self {
+    pub(crate) fn new() -> Self {
         Self {
             pre_hp: BiquadState::default(),
             tone_lp: BiquadState::default(),
         }
     }
 
-    pub fn reset(&mut self) {
+    pub(crate) fn reset(&mut self) {
         self.pre_hp.reset();
         self.tone_lp.reset();
     }
@@ -98,7 +98,7 @@ impl OverdriveDsp {
     ///   Input → HP filter (100 Hz) → drive gain → tanh soft-clip → LP tone filter → output gain
     ///   Mixed with dry signal according to `mix` (0.0 = full dry, 1.0 = full wet).
     #[inline]
-    pub fn process(
+    pub(crate) fn process(
         &mut self,
         input: f32,
         drive_linear: f32,
