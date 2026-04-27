@@ -29,7 +29,7 @@ impl BiquadState {
 }
 
 #[derive(Clone, Copy, Default)]
-struct BiquadCoeffs {
+pub(crate) struct BiquadCoeffs {
     b0: f32,
     b1: f32,
     b2: f32,
